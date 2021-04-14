@@ -71,6 +71,12 @@ public $validationRules = [
 ];
 ```
 
-In the settings of the reCaptcha3 validator, the first parameter you specify is expectedAction, this parameter is not required.
+In the settings of the reCaptcha3 validator, the first parameter you specify is
+expectedAction, this parameter is not required.  However, the action as in the
+example above 'contactForm' should share the same name as the form id attribute.
+This allows the grecaptcha.execute command to be called at the time of submission
+rather than on page load.  Otherwise, the form may experience token expiration
+warnings.
 
-You can override a global scoreThreshold parameter in the second reCaptcha3 rule parameter.
+You can override a global scoreThreshold parameter in the second reCaptcha3 rule
+parameter.
